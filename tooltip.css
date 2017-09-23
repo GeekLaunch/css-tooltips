@@ -1,0 +1,28 @@
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    color: #555;
+    background-color: #fafafa;
+    border: 1px solid #555;
+    border-radius: 2px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 80%;
+    padding: 2px 4px;
+    box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+    transition-delay: 0.5s;
+}
+
+[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
